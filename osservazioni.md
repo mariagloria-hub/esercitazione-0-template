@@ -35,8 +35,7 @@ Come ho verificato che la versione provata sia presente su GitHub:
 Ho confrontato l'identificativo alfanumerico dell'ultimo commit mostrato da git log--oneline nel terminale con il codice del commit visualizzato su github.
 
 Verificato che l'hash del commit su github corrisponde a quello locale
-Che cosa ho osservato prima e dopo `git pull`, e perché non serve un nuovo clone:
-
+Che cosa ho osservato prima e dopo `git pull`, e perché non serve un nuovo clone: Prima del git pull la modifica fatta online non era presente sul pc locale. Dopo il git pull, il file si è aggiornato con la nuova riga. Non serve un nuovo clone perché git pull scarica e integra solo i nuovi commit da remoto aggiornando la copia locale già esistente.
 ## Step 2 — Eco: prima prova
 
 Argomenti passati, comando e risultato:
