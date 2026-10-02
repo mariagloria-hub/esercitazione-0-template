@@ -1,12 +1,13 @@
 # Osservazioni — Esercitazione 0
 
-Gruppo:
+Gruppo: C11
 
-Componenti (nome, cognome e username GitHub di entrambi):
+Componenti (MariaGloria, Morabito, mariagloria-hub; Nicole, Micheletti, micheletti5)
 
-URL del repository condiviso:
+URL del repository (non condiviso)
+https://github.com/mariagloria-hub/esercitazione-0-template.git
 
-Chi ha usato la tastiera nello step 1 e nello step 2:
+Abbiamo lavorato da due computer separati
 
 Compilate insieme le osservazioni e discutete le risposte: entrambi dovete
 saper spiegare le prove svolte.
@@ -14,15 +15,18 @@ saper spiegare le prove svolte.
 ## Step 1 — Hello World: compilazione ed esecuzione
 
 Comando di compilazione:
-
+gcc -std=c17 -Wall -Wextra -Wpedantic hello.c -o hello
 Comando di esecuzione e risultato osservato:
-
+./hello
+Hello, computational physics!
 Che cosa ho capito su sorgente ed eseguibile:
-
+hello.c è il file sorgente mentre hello è l'eseguibile. Se modifico il messaggio da sorgente e avvio l'eseguibile senza ricompilare, dal terminale osserverò ancora la vecchia stampa
 Output richiesto e comportamento del programma prima della modifica:
-
+L'output richiesto è Hello, computational physics!
+Prima della modifica da terminale vedrò questo messaggio.
+Se eseguo il programma reindirizzando l'output su file, sul terminale non appare nulla, il messaggio è stato salvato dentro output.txt
 Esito dopo la modifica e spiegazione della correzione:
-
+Redirezionando l'output su file si invia lo standard output al file anziché a schermo. Invece, se ho fatto un'eventuale modifica al testo, ripristinando la frase originale in hello.c e ricompilando torno all'output atteso.
 ## Step 1 — Git
 
 Quali file ho incluso nel commit e perché:
