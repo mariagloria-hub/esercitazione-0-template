@@ -30,9 +30,9 @@ Redirezionando l'output su file si invia lo standard output al file anziché a s
 ## Step 1 — Git
 
 Quali file ho incluso nel commit e perché:
-
+Ho incluso hello.c e osservazioni.md. Non ho incluso hello(l'eseguibile) perché i file binari compilati vengono generati sul codice sorgente e non vanno tracciati su git.
 Come ho verificato che la versione provata sia presente su GitHub:
-
+Ho confrontato l'identificativo alfanumerico dell'ultimo commit mostrato da git log--oneline nel terminale con il codice del commit visualizzaato su github
 Che cosa ho osservato prima e dopo `git pull`, e perché non serve un nuovo clone:
 
 ## Step 2 — Eco: prima prova
