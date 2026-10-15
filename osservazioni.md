@@ -50,6 +50,9 @@ Come puoi verificare che su GitHub ci sia proprio la versione provata?
 Aprendo la pagina del repository su GitHub nel browser, posso controllare l'hash identificativo dell'ultimo commit su GitHub e confrontarlo con l'output di git log --oneline -5 sul terminale: l'identificativo dovrebbe essere identico.
 Inoltre, posso cliccare sui file hello.c e osservazioni.md direttamente nell'interfaccia di GitHub per verificare che il testo corrisponda a quello presente sul computer.
 
+
+"Ho verificato la correttezza del commit confrontando l'hash visualizzato su GitHub con l'output di git log --oneline dal terminale!"
+
 Quali file ho incluso nel commit e perché:
 Ho incluso hello.c e osservazioni.md. Non ho incluso hello(l'eseguibile) perché i file binari compilati vengono generati sul codice sorgente e non vanno tracciati su git.
 Come ho verificato che la versione provata sia presente su GitHub:
