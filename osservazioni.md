@@ -53,14 +53,15 @@ Inoltre, posso cliccare sui file hello.c e osservazioni.md direttamente nell'int
 
 "Ho verificato la correttezza del commit confrontando l'hash visualizzato su GitHub con l'output di git log --oneline dal terminale!"
 
-Quali file ho incluso nel commit e perché:
-Ho incluso hello.c e osservazioni.md. Non ho incluso hello(l'eseguibile) perché i file binari compilati vengono generati sul codice sorgente e non vanno tracciati su git.
-Come ho verificato che la versione provata sia presente su GitHub:
-Ho confrontato l'identificativo alfanumerico dell'ultimo commit mostrato da git log--oneline nel terminale con il codice del commit visualizzato su github.
+Quando ricevo una modifica da remoto tramite github perché non è necessario eseguire di nuovo git clone? Non è necessario perché git clone serve solo la prima volta per scaricare l'intero repository e inizializzare la struttura di tracciamento .git sul mio computer. Una volta stabilita la connessione tra la cartella locale e il remoto (origin), per scaricare i nuovi commit e aggiornare i file basta usare git pull. Eseguire un nuovo clone creerebbe una cartella duplicata inutile.
 
-Verificato che l'hash del commit su github corrisponde a quello locale
-Che cosa ho osservato prima e dopo `git pull`, e perché non serve un nuovo clone: Prima del git pull la modifica fatta online non era presente sul pc locale. Dopo il git pull, il file si è aggiornato con la nuova riga. Non serve un nuovo clone perché git pull scarica e integra solo i nuovi commit da remoto aggiornando la copia locale già esistente.
-## Step 2 — Eco: prima prova
+Quali file ho incluso nel commit e perché:
+Ho incluso i file hello.c e osservazioni.md. Il file hello.c contiene il codice sorgente C necessario per la compilazione ed esecuzione del programma. Il file osservazioni.md contiene la documentazione e le risposte alle domande dell'esercitazione. Non ho incluso l'eseguibile hello perché i file binari si ricostruiscono dal sorgente e non vanno tracciati con Git.
+Come ho verificato che la versione provata sia presente su GitHub:
+Ho aperto la pagina del repository su GitHub tramite browser e ho confrontato l'identificativo alfanumerico(hash) dell'ultimo commit con l'output del comando git log --oneline -5 eseguito dal mio terminale locale. Ho inoltre aperto i file hello.c e osservazioni.md direttamente sull'interfaccia web per confermare che il codice e il testo corrispondessero a quelli locali.
+Che cosa ho osservato prima e dopo `git pull`, e perché non serve un nuovo clone:
+Prima di eseguire git pull, la modifica apportata via browser al file osservazioni.md non era visibile sul file locale presente sul mio computer. Dopo aver eseguito git pull, Git ha scaricato il nuovo commit dal remoto e ha aggiornato automaticamente il file locale.
+Non serve eseguire di nuovo git clone perché la copia locale è già collegata al repository remoto origin; git pull serve proprio a sincronizzare i nuovi commit mantenendo intatta la struttura e la cronologia locale.
 
 Argomenti passati, comando e risultato:
 
