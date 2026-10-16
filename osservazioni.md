@@ -63,30 +63,41 @@ Che cosa ho osservato prima e dopo `git pull`, e perché non serve un nuovo clon
 Prima di eseguire git pull, la modifica apportata via browser al file osservazioni.md non era visibile sul file locale presente sul mio computer. Dopo aver eseguito git pull, Git ha scaricato il nuovo commit dal remoto e ha aggiornato automaticamente il file locale.
 Non serve eseguire di nuovo git clone perché la copia locale è già collegata al repository remoto origin; git pull serve proprio a sincronizzare i nuovi commit mantenendo intatta la struttura e la cronologia locale.
 
+## Step 2 — Eco: prima prova
+
 Argomenti passati, comando e risultato:
-
+./eco ciao 12 3.5
+ciao 12 3.500000
 Che cosa posso concludere:
-
+I tre argomenti vengono letti dalla riga di comando. argv[0] contiene la stringa ./eco (nome dell'eseguibile), argv[1] contiene "ciao", argv[2] viene convertito da stringa ad intero tramite atoi (ottenendo 12), e argv[3] viene convertito da stringa a double tramite atof (stampato come 3.500000 grazie alla specifica %.6f). Il programma richiede argc == 4 perché conta sia il nome del programma sia i tre argomenti passati dall'utente.
 ## Step 2 — Eco: seconda prova
 
 Argomenti passati, comando e risultato:
-
+./eco 0012 12 1.25e1
+0012 12 12.500000
 Che cosa ho capito su testo, conversioni e stampa:
-
+Se inviato come primo argomento (stringa), 0012 viene mantenuto inalterato con i suoi zeri iniziali.
+Se inviato come secondo argomento (convertito in int), la conversione numerica elimina gli zeri iniziali non significativi.
+Il valore 1.25e1 espresso in notazione scientifica viene convertito in un numero reale 12.5 e successivamente rappresentato con 6 cifre decimali (12.500000).
+Per passare un testo contenente spazi come un singolo argomento (es. "ciao mondo") occorre racchiuderlo tra virgolette doppie nel terminale.
 ## Step 2 — Risultato ed errori
 
 Previsioni per l'esecuzione con argomenti validi e per quella con `dodici`:
-
+Con argomenti validi il risultato finisce dentro eco.txt, il terminale rimane silenzioso e il codice di uscita è 0. Con la stringa dodici, il programma gestisce l'errore: manda il messaggio di errore sul canale di errore standard (stderr) che appare a schermo sul terminale, mentre eco.txt rimane vuoto e il codice di uscita restituito è diverso da zero.
 Contenuto di `eco.txt`, messaggi nel terminale e codici di uscita osservati:
-
+- Prima prova (./eco ciao 12 3.5 > eco.txt): eco.txt contiene ciao 12 3.500000. Il terminale non mostra nulla. echo $? restituisce 0.
+- Seconda prova (./eco2 ciao dodici 3.5 > eco.txt): eco.txt risulta vuoto. Sul terminale viene stampato l'errore: Il secondo argomento deve essere un intero in base 10. echo $? restituisce 2.
+La redirezione > cattura unicamente lo standard output (stdout), lasciando intatto lo standard error (stderr) verso il terminale.
 Come un controllo automatico può riconoscere un errore:
-
+I sistemi di correzione automatica leggono il valore di ritorno del programma (echo $? o valore restituito dal main). Se questo valore è 0, l'esecuzione si considera completata correttamente; se è diverso da 0, il test viene contrassegnato come fallito.
 ## Step 2 — Parametri e calcolo fisico
 
 Quando serve ricompilare e quando basta cambiare gli argomenti:
-
+Quando serve ricompilare e quando basta cambiare gli argomenti:
+Per variare un parametro di calcolo (come un passo temporale, un intervallo d'integrazione o una costante fisica), è sufficiente passare un valore differente sulla riga di comando senza ricompilare il codice. La ricompilazione si rende necessaria solo quando occorre modificare l'algoritmo o la formula matematica implementata nel sorgente C.
 ## Step 2 — Git
 
 Come riconosco nella cronologia i commit dei due step:
-
+I due step si distinguono tramite i messaggi associati ai commit leggibili con `git log --oneline`: il primo step è tracciato dal commit per la creazione ed esecuzione di `hello.c`, mentre il secondo step è associato ai commit contenenti `eco.c`, `eco2.c`.
 Come ho verificato che la versione finale sia presente su GitHub:
+Ho aperto la pagina del repository dal browser su GitHub e verificato che l'identificativo hash dell'ultimo commit in alto coincida con quello restituito da `git log --oneline -1` sul terminale locale.

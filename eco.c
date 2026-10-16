@@ -9,6 +9,10 @@ int main(int argc, char *argv[])
     }
 
     char *testo = argv[1];
+    // atoi converte la stringa argv[2] (es. "12") in un intero vero (int)
+    int intero = atoi(argv[2]);
+    // atof converte la stringa argv[3] (es. "3.5") in un numero con virgola (double)
+    double reale = atof(argv[3]);
 
     /* TODO: converti gli argomenti in tipi appropriati. Usa atoi o atof
     * prendi ispirazione da:
@@ -16,10 +20,10 @@ int main(int argc, char *argv[])
     * https://en.cppreference.com/c/string/byte/atof */
 
     /* Evita un warning finche' la variabiletesto non viene usato nella stampa. */
-    (void)testo;
+    //(void)testo;
 
     /* TODO: scrivi una sola chiamata a printf che stampi testo, intero e reale,
      * separati da uno spazio e seguiti da un carattere di nuova riga. */
-
+    printf("%s %d %.6f\n", testo, intero, reale);
     return 0;
 }
